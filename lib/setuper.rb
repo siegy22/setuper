@@ -1,6 +1,6 @@
-require "easy_cli/version"
+require "setuper/version"
 
-module EasyCLI
+module Setuper
   extend self
 
   def yn?(question)

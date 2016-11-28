@@ -1,16 +1,16 @@
 # coding: utf-8
 lib = File.expand_path('lib', __dir__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'easy_cli/version'
+require 'setuper/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "easy_cli"
-  spec.version       = EasyCLI::VERSION
+  spec.name          = "setuper"
+  spec.version       = Setuper::VERSION
   spec.authors       = ["Yves Siegrist"]
   spec.email         = ["Elektron1c97@gmail.com"]
 
   spec.summary       = "Handy cli functions like [y/n]"
-  spec.description   = "e.g. used in a bin/setup which is a bit complicated, to easily setup stuff and don't write too much code in the bin/setup file itself."
+  spec.description   = "Have a complex setup for your ruby project? Is your bin/setup full of code with logical operations and functions? This makes it easier to ask the user when setting up what he needs."
   spec.homepage      = "https://github.com/siegy22/easy_cli"
   spec.license       = "MIT"
 
