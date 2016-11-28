@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
 
   spec.summary       = "Handy cli functions like [y/n]"
   spec.description   = "Have a complex setup for your ruby project? Is your bin/setup full of code with logical operations and functions? This makes it easier to ask the user when setting up what he needs."
-  spec.homepage      = "https://github.com/siegy22/easy_cli"
+  spec.homepage      = "https://github.com/siegy22/setuper"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0").reject do |f|

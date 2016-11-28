@@ -1,15 +1,15 @@
-# EasyCli
-[![Build Status](https://travis-ci.org/siegy22/easy_cli.svg?branch=master)](https://travis-ci.org/siegy22/slack_uberzeit)
+# Setuper
+[![Build Status](https://travis-ci.org/siegy22/setuper.svg?branch=master)](https://travis-ci.org/siegy22/setuper)
 
-Some handy functions to interact with the cli.
-Mostly used in a more complex `bin/setup`.
+Handy functions to interact with the cli.
+Mostly used in a complex `bin/setup` script.
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'easy_cli'
+gem 'setuper'
 ```
 
 And then execute:
@@ -18,14 +18,14 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install easy_cli
+    $ gem install setuper
 
 ## Usage
 
 Let the user answer with yes or no:
 
 ```ruby
-EasyCLI.yn?("Are you feeling good?")
+Setuper.yn?("Are you feeling good?")
 # Are you feeling good? [y/n]
 # y
 # => true
@@ -34,7 +34,7 @@ EasyCLI.yn?("Are you feeling good?")
 Ask the user anything:
 
 ```ruby
-EasyCLI.ask("What's 1 + 1?")
+Setuper.ask("What's 1 + 1?")
 # What's 1 + 1?
 # 2 (user input)
 # => "2"
@@ -43,7 +43,7 @@ EasyCLI.ask("What's 1 + 1?")
 Let the user give you a list of things (aliased as `list`):
 
 ```ruby
-EasyCLI.ask_for_list("What are the family member of 'The Simpsons'?")
+Setuper.ask_for_list("What are the family member of 'The Simpsons'?")
 # What are the family member of 'The Simpsons'? (comma seperated)
 # Homer, Marge, Maggie, Bart, Lisa
 # => ["Homer", "Marge", "Maggie", "Bart", "Lisa"]
@@ -53,7 +53,7 @@ Or let him pick just one item (aliased as `pick`):
 
 (`question:` is a keyword argument and defaults to "Please choose:")
 ```ruby
-EasyCLI.choose("Donald Trump", "Hillary Clinton", question: "Who's the winner of the 2016 elections?")
+Setuper.choose("Donald Trump", "Hillary Clinton", question: "Who's the winner of the 2016 elections?")
 # Who's the winner of the 2016 elections?
 #   Type 1 for "Donald Trump"
 #   Type 2 for "Hillary Clinton"
@@ -63,10 +63,10 @@ EasyCLI.choose("Donald Trump", "Hillary Clinton", question: "Who's the winner of
 
 ### Advanced
 
-You can even change the io EasyCLI should use. The default is `Kernel`.
+You can even change the io Setuper should use. The default is `Kernel`.
 
 ```ruby
-EasyCLI.io = MyCustomIO
+Setuper.io = MyCustomIO
 ```
 
 How to use in a bin/setup:
@@ -75,7 +75,7 @@ First, add it to your gemfile:
 
 ```ruby
 group :setup do
-  gem 'easy_cli'
+  gem 'setuper'
 end
 ```
 
@@ -92,7 +92,7 @@ system('bundle check') || system!('bundle install')
 require 'bundler'
 Bundler.require(:setup)
 
-include EasyCLI
+include Setuper
 theme = ask("What's your theme?")
 File.write(APP_ROOT + ".theme", theme)
 ```
@@ -106,7 +106,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/siegy22/easy_cli. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/siegy22/setuper. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 
 ## License
